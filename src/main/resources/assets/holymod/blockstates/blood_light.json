@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "normal": { "model": "holymod:blood_light" },
+        "inventory": { "model": "holymod:blood_light" }
+    }
+}

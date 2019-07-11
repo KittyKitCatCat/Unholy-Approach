@@ -1,0 +1,55 @@
+item.the_abbadon.name=The Abbadon
+
+item.the_providence.name=The Providence
+
+item.shard_cursed.name=Cursed Shards
+
+item.shard_purified.name=Purified Shards
+
+item.purity_glide_braclet.name=Purity Braclet
+
+item.crimtane_pendant.name=Crimtane Pendant
+
+item.shard_dagger.name=Sacrificial Dagger
+
+item.blood_quartz.name=Blood Infused Quartz
+
+item.blessed_diamond.name=Blessed Diamond
+
+item.crystal_normal.name=Pure Crystal
+
+item.crystal_sun.name=Sun Crystal
+
+item.crystal_moon.name=Moon Crystal
+
+itemGroup.holymod=Unholy Approach
+
+the_lumina_holy_tooltip=Chance to weaken and burn hit enemies, this does extra damage. Hitting a weakened foe recovers health.
+
+the_lumina_tooltip=Chance to wither hit enemies. Hitting withered enemies deals more damage, this pierces armor.
+
+item.blood_sword.name=Blood Infused Sword
+
+item.blood_axe.name=Blood Infused Axe
+
+item.blood_shovel.name=Blood Infused Shovel
+
+item.blood_pickaxe.name=Blood Infused Pickaxe
+
+item.blood_lamp.name=Cursed Lantern
+
+blood_sword_tooltip=Attacking deals an extra half a heart of armor piercing damage.
+
+blood_axe_tooltip=While at full health, hitting an enemy debuffs them
+
+blood_shovel_tooltip=Mining dirt repairs the shovel
+
+blood_pickaxe_tooltip=If you have a cursed lantern, right clicking with the pickaxe uses it.
+
+blessed_sword_tooltip=Hitting an enemy has a small chance to grant you resistance.
+
+blessed_axe_tooltip=Hitting an enemy while sprinting recovers half a heart.
+
+blessed_shovel_tooltip=Mining dirt repairs the shovel, but mining other blocks decrease it further
+
+blessed_pickaxe_tooltip=Breaking blocks has a chance to grant you haste.

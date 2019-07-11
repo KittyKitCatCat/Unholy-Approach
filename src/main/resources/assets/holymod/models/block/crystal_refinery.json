@@ -1,0 +1,361 @@
+{
+    "__comment": "Model generated using MrCrayfish's Model Creator (https://mrcrayfish.com/tools?id=mc)",
+    "textures": {
+        "holy_stone_brick": "holymod:blocks/holy_stone_brick",
+        "holy_stone_tile": "holymod:blocks/holy_stone_tile",
+        "holy_wood_planks": "holymod:blocks/holy_wood_planks"
+    },
+    "display": {
+        "gui": {
+            "rotation": [ 30, 45, 0 ],
+            "translation": [ 0, 0, 0 ],
+            "scale": [ 0.625, 0.625, 0.625 ]
+        },
+        "ground": {
+            "rotation": [ 0, 0, 0 ],
+            "translation": [ 0, 3, 0 ],
+            "scale": [ 0.25, 0.25, 0.25 ]
+        },
+        "fixed": {
+            "rotation": [ 0, 180, 0 ],
+            "translation": [ 0, 0, 0 ],
+            "scale": [ 1, 1, 1 ]
+        },
+        "head": {
+            "rotation": [ 0, 180, 0 ],
+            "translation": [ 0, 0, 0 ],
+            "scale": [ 1, 1, 1 ]
+        },
+        "firstperson_righthand": {
+            "rotation": [ 0, 315, 0 ],
+            "translation": [ 0, 2.5, 0 ],
+            "scale": [ 0.4, 0.4, 0.4 ]
+        },
+        "thirdperson_righthand": {
+            "rotation": [ 75, 315, 0 ],
+            "translation": [ 0, 2.5, 0 ],
+            "scale": [ 0.375, 0.375, 0.375 ]
+        }
+    },
+    "elements": [
+        {
+            "name": "Cube",
+            "from": [ 2, 0, 2 ], 
+            "to": [ 14, 1, 14 ], 
+            "faces": {
+                "north": { "texture": "#holy_stone_brick", "uv": [ 0, 0, 12, 1 ] },
+                "east": { "texture": "#holy_stone_brick", "uv": [ 2, 12, 14, 13 ] },
+                "south": { "texture": "#holy_stone_brick", "uv": [ 0, 0, 12, 1 ] },
+                "west": { "texture": "#holy_stone_brick", "uv": [ 1, 2, 13, 3 ], "rotation": 180, "tintindex": 6 },
+                "up": { "texture": "#holy_stone_brick", "uv": [ 0, 0, 12, 12 ] },
+                "down": { "texture": "#holy_stone_brick", "uv": [ 0, 0, 12, 12 ] }
+            }
+        },
+        {
+            "name": "Cube",
+            "from": [ 3, 0, 1 ], 
+            "to": [ 13, 1, 2 ], 
+            "faces": {
+                "north": { "texture": "#holy_stone_brick", "uv": [ 2, 2, 12, 3 ] },
+                "east": { "texture": "#holy_stone_brick", "uv": [ 0, 0, 1, 1 ] },
+                "west": { "texture": "#holy_stone_brick", "uv": [ 0, 0, 1, 1 ] },
+                "up": { "texture": "#holy_stone_brick", "uv": [ 1, 1, 11, 2 ] },
+                "down": { "texture": "#holy_stone_brick", "uv": [ 0, 0, 10, 1 ] }
+            }
+        },
+        {
+            "name": "Cube",
+            "from": [ 3, 0, 14 ], 
+            "to": [ 13, 1, 15 ], 
+            "faces": {
+                "east": { "texture": "#holy_stone_brick", "uv": [ 0, 0, 1, 1 ] },
+                "south": { "texture": "#holy_stone_brick", "uv": [ 2, 2, 12, 3 ] },
+                "west": { "texture": "#holy_stone_brick", "uv": [ 0, 0, 1, 1 ] },
+                "up": { "texture": "#holy_stone_brick", "uv": [ 2, 2, 12, 3 ] },
+                "down": { "texture": "#holy_stone_brick", "uv": [ 0, 0, 9, 1 ] }
+            }
+        },
+        {
+            "name": "Cube",
+            "from": [ 1, 0, 3 ], 
+            "to": [ 2, 1, 13 ], 
+            "faces": {
+                "north": { "texture": "#holy_stone_brick", "uv": [ 0, 0, 1, 1 ] },
+                "south": { "texture": "#holy_stone_brick", "uv": [ 2, 2, 3, 3 ] },
+                "west": { "texture": "#holy_stone_brick", "uv": [ 0, 0, 10, 1 ] },
+                "up": { "texture": "#holy_stone_brick", "uv": [ 15, 1, 16, 11 ] },
+                "down": { "texture": "#holy_stone_brick", "uv": [ 0, 0, 9, 1 ] }
+            }
+        },
+        {
+            "name": "Cube",
+            "from": [ 14, 0, 3 ], 
+            "to": [ 15, 1, 13 ], 
+            "faces": {
+                "north": { "texture": "#holy_stone_brick", "uv": [ 0, 0, 1, 1 ] },
+                "east": { "texture": "#holy_stone_brick", "uv": [ 0, 0, 10, 1 ] },
+                "south": { "texture": "#holy_stone_brick", "uv": [ 2, 2, 3, 3 ] },
+                "up": { "texture": "#holy_stone_brick", "uv": [ 14, 1, 15, 11 ] },
+                "down": { "texture": "#holy_stone_brick", "uv": [ 0, 0, 9, 1 ] }
+            }
+        },
+        {
+            "name": "Cube",
+            "from": [ 4, 1, 3 ], 
+            "to": [ 12, 6, 4 ], 
+            "faces": {
+                "north": { "texture": "#holy_wood_planks", "uv": [ 0, 0, 8, 5 ] },
+                "east": { "texture": "#holy_wood_planks", "uv": [ 0, 0, 1, 5 ] },
+                "south": { "texture": "#holy_wood_planks", "uv": [ 0, 0, 8, 5 ] },
+                "west": { "texture": "#holy_wood_planks", "uv": [ 0, 0, 1, 5 ] }
+            }
+        },
+        {
+            "name": "Cube",
+            "from": [ 4, 1, 12 ], 
+            "to": [ 12, 6, 13 ], 
+            "faces": {
+                "north": { "texture": "#holy_wood_planks", "uv": [ 0, 0, 8, 5 ] },
+                "east": { "texture": "#holy_wood_planks", "uv": [ 0, 0, 1, 5 ] },
+                "south": { "texture": "#holy_wood_planks", "uv": [ 0, 0, 8, 5 ] },
+                "west": { "texture": "#holy_wood_planks", "uv": [ 0, 0, 1, 5 ] }
+            }
+        },
+        {
+            "name": "Cube",
+            "from": [ 3, 1, 4 ], 
+            "to": [ 4, 6, 12 ], 
+            "faces": {
+                "north": { "texture": "#holy_wood_planks", "uv": [ 0, 0, 1, 5 ] },
+                "east": { "texture": "#holy_wood_planks", "uv": [ 0, 0, 8, 5 ] },
+                "south": { "texture": "#holy_wood_planks", "uv": [ 0, 0, 1, 5 ] },
+                "west": { "texture": "#holy_wood_planks", "uv": [ 0, 0, 8, 5 ] }
+            }
+        },
+        {
+            "name": "Cube",
+            "from": [ 12, 1, 4 ], 
+            "to": [ 13, 6, 12 ], 
+            "faces": {
+                "north": { "texture": "#holy_wood_planks", "uv": [ 0, 0, 1, 5 ] },
+                "east": { "texture": "#holy_wood_planks", "uv": [ 0, 0, 8, 5 ] },
+                "south": { "texture": "#holy_wood_planks", "uv": [ 0, 0, 1, 5 ] },
+                "west": { "texture": "#holy_wood_planks", "uv": [ 0, 0, 8, 5 ] }
+            }
+        },
+        {
+            "name": "Cube",
+            "from": [ 2, 6, 3 ], 
+            "to": [ 14, 7, 13 ], 
+            "faces": {
+                "north": { "texture": "#holy_stone_brick", "uv": [ 0, 0, 12, 1 ] },
+                "east": { "texture": "#holy_stone_brick", "uv": [ 2, 12, 12, 13 ] },
+                "south": { "texture": "#holy_stone_brick", "uv": [ 0, 0, 12, 1 ] },
+                "west": { "texture": "#holy_stone_brick", "uv": [ 1, 2, 11, 3 ], "rotation": 180, "tintindex": 6 },
+                "up": { "texture": "#holy_stone_brick", "uv": [ 0, 0, 12, 10 ] },
+                "down": { "texture": "#holy_stone_brick", "uv": [ 0, 0, 12, 10 ] }
+            }
+        },
+        {
+            "name": "Cube",
+            "from": [ 3, 6, 13 ], 
+            "to": [ 13, 7, 14 ], 
+            "faces": {
+                "east": { "texture": "#holy_stone_brick", "uv": [ 0, 0, 1, 1 ] },
+                "south": { "texture": "#holy_stone_brick", "uv": [ 2, 2, 12, 3 ] },
+                "west": { "texture": "#holy_stone_brick", "uv": [ 0, 0, 1, 1 ] },
+                "up": { "texture": "#holy_stone_brick", "uv": [ 2, 2, 12, 3 ] },
+                "down": { "texture": "#holy_stone_brick", "uv": [ 0, 0, 9, 1 ] }
+            }
+        },
+        {
+            "name": "Cube",
+            "from": [ 3, 6, 2 ], 
+            "to": [ 13, 7, 3 ], 
+            "faces": {
+                "north": { "texture": "#holy_stone_brick", "uv": [ 2, 2, 12, 3 ] },
+                "east": { "texture": "#holy_stone_brick", "uv": [ 0, 0, 1, 1 ] },
+                "west": { "texture": "#holy_stone_brick", "uv": [ 0, 0, 1, 1 ] },
+                "up": { "texture": "#holy_stone_brick", "uv": [ 1, 1, 11, 2 ] },
+                "down": { "texture": "#holy_stone_brick", "uv": [ 0, 0, 10, 1 ] }
+            }
+        },
+        {
+            "name": "Cube",
+            "from": [ 12, 7, 4 ], 
+            "to": [ 13, 13, 12 ], 
+            "faces": {
+                "north": { "texture": "#holy_wood_planks", "uv": [ 0, 0, 1, 6 ] },
+                "east": { "texture": "#holy_wood_planks", "uv": [ 0, 0, 8, 6 ] },
+                "south": { "texture": "#holy_wood_planks", "uv": [ 0, 0, 1, 6 ] },
+                "west": { "texture": "#holy_wood_planks", "uv": [ 0, 0, 8, 6 ] }
+            }
+        },
+        {
+            "name": "Cube",
+            "from": [ 4, 7, 3 ], 
+            "to": [ 12, 13, 4 ], 
+            "faces": {
+                "north": { "texture": "#holy_wood_planks", "uv": [ 0, 0, 8, 6 ] },
+                "east": { "texture": "#holy_wood_planks", "uv": [ 0, 0, 1, 6 ] },
+                "south": { "texture": "#holy_wood_planks", "uv": [ 0, 0, 8, 6 ] },
+                "west": { "texture": "#holy_wood_planks", "uv": [ 0, 0, 1, 6 ] }
+            }
+        },
+        {
+            "name": "Cube",
+            "from": [ 4, 7, 12 ], 
+            "to": [ 12, 13, 13 ], 
+            "faces": {
+                "north": { "texture": "#holy_wood_planks", "uv": [ 0, 0, 8, 6 ] },
+                "east": { "texture": "#holy_wood_planks", "uv": [ 0, 0, 1, 6 ] },
+                "south": { "texture": "#holy_wood_planks", "uv": [ 0, 0, 8, 6 ] },
+                "west": { "texture": "#holy_wood_planks", "uv": [ 0, 0, 1, 6 ] }
+            }
+        },
+        {
+            "name": "Cube",
+            "from": [ 3, 7, 4 ], 
+            "to": [ 4, 13, 12 ], 
+            "faces": {
+                "north": { "texture": "#holy_wood_planks", "uv": [ 0, 0, 1, 6 ] },
+                "east": { "texture": "#holy_wood_planks", "uv": [ 0, 0, 8, 6 ] },
+                "south": { "texture": "#holy_wood_planks", "uv": [ 0, 0, 1, 6 ] },
+                "west": { "texture": "#holy_wood_planks", "uv": [ 0, 0, 8, 6 ] }
+            }
+        },
+        {
+            "name": "Cube",
+            "from": [ 6, 8, 13 ], 
+            "to": [ 10, 12, 14 ], 
+            "faces": {
+                "east": { "texture": "#holy_stone_tile", "uv": [ 0, 0, 1, 4 ] },
+                "south": { "texture": "#holy_stone_tile", "uv": [ 0, 0, 4, 4 ] },
+                "west": { "texture": "#holy_stone_tile", "uv": [ 0, 0, 1, 4 ] },
+                "up": { "texture": "#holy_stone_tile", "uv": [ 2, 1, 7, 2 ] },
+                "down": { "texture": "#holy_stone_tile", "uv": [ 0, 0, 4, 1 ] }
+            }
+        },
+        {
+            "name": "Cube",
+            "from": [ 2, 8, 6 ], 
+            "to": [ 3, 12, 10 ], 
+            "faces": {
+                "north": { "texture": "#holy_stone_tile", "uv": [ 2, 2, 3, 6 ] },
+                "south": { "texture": "#holy_stone_tile", "uv": [ 0, 0, 1, 4 ] },
+                "west": { "texture": "#holy_stone_tile", "uv": [ 0, 0, 4, 4 ] },
+                "up": { "texture": "#holy_stone_tile", "uv": [ 2, 1, 7, 2 ] },
+                "down": { "texture": "#holy_stone_tile", "uv": [ 0, 0, 1, 4 ] }
+            }
+        },
+        {
+            "name": "Cube",
+            "from": [ 13, 8, 6 ], 
+            "to": [ 14, 12, 10 ], 
+            "faces": {
+                "north": { "texture": "#holy_stone_tile", "uv": [ 2, 2, 3, 6 ] },
+                "east": { "texture": "#holy_stone_tile", "uv": [ 0, 0, 4, 4 ] },
+                "south": { "texture": "#holy_stone_tile", "uv": [ 0, 0, 1, 4 ] },
+                "up": { "texture": "#holy_stone_tile", "uv": [ 2, 1, 7, 2 ] },
+                "down": { "texture": "#holy_stone_tile", "uv": [ 0, 0, 1, 4 ] }
+            }
+        },
+        {
+            "name": "Cube",
+            "from": [ 2, 13, 3 ], 
+            "to": [ 14, 16, 13 ], 
+            "faces": {
+                "north": { "texture": "#holy_stone_brick", "uv": [ 0, 0, 12, 3 ] },
+                "east": { "texture": "#holy_stone_brick", "uv": [ 2, 12, 12, 15 ] },
+                "south": { "texture": "#holy_stone_brick", "uv": [ 0, 0, 12, 3 ] },
+                "west": { "texture": "#holy_stone_brick", "uv": [ 1, 2, 11, 5 ], "rotation": 180, "tintindex": 6 },
+                "up": { "texture": "#holy_stone_brick", "uv": [ 0, 0, 12, 10 ] },
+                "down": { "texture": "#holy_stone_brick", "uv": [ 0, 0, 12, 10 ] }
+            }
+        },
+        {
+            "name": "Cube",
+            "from": [ 3, 13, 2 ], 
+            "to": [ 13, 16, 3 ], 
+            "faces": {
+                "north": { "texture": "#holy_stone_brick", "uv": [ 2, 2, 12, 5 ] },
+                "east": { "texture": "#holy_stone_brick", "uv": [ 0, 0, 1, 3 ] },
+                "west": { "texture": "#holy_stone_brick", "uv": [ 0, 0, 1, 3 ] },
+                "up": { "texture": "#holy_stone_brick", "uv": [ 1, 1, 11, 2 ] },
+                "down": { "texture": "#holy_stone_brick", "uv": [ 0, 0, 10, 1 ] }
+            }
+        },
+        {
+            "name": "Cube",
+            "from": [ 3, 13, 13 ], 
+            "to": [ 13, 16, 14 ], 
+            "faces": {
+                "east": { "texture": "#holy_stone_brick", "uv": [ 0, 0, 1, 3 ] },
+                "south": { "texture": "#holy_stone_brick", "uv": [ 2, 2, 12, 5 ] },
+                "west": { "texture": "#holy_stone_brick", "uv": [ 0, 0, 1, 3 ] },
+                "up": { "texture": "#holy_stone_brick", "uv": [ 2, 2, 12, 3 ] },
+                "down": { "texture": "#holy_stone_brick", "uv": [ 0, 0, 9, 1 ] }
+            }
+        },
+        {
+            "name": "Cube",
+            "from": [ 6, 8, 2 ], 
+            "to": [ 10, 12, 3 ], 
+            "faces": {
+                "north": { "texture": "#holy_stone_tile", "uv": [ 0, 0, 4, 4 ] },
+                "east": { "texture": "#holy_stone_tile", "uv": [ 0, 0, 1, 4 ] },
+                "west": { "texture": "#holy_stone_tile", "uv": [ 0, 0, 1, 4 ] },
+                "up": { "texture": "#holy_stone_tile", "uv": [ 2, 1, 7, 2 ] },
+                "down": { "texture": "#holy_stone_tile", "uv": [ 0, 0, 4, 1 ] }
+            }
+        },
+        {
+            "name": "Cube",
+            "from": [ 7, 2, 2 ], 
+            "to": [ 9, 4, 3 ], 
+            "faces": {
+                "north": { "texture": "#holy_stone_tile", "uv": [ 0, 0, 2, 2 ] },
+                "east": { "texture": "#holy_stone_tile", "uv": [ 0, 0, 1, 2 ] },
+                "west": { "texture": "#holy_stone_tile", "uv": [ 0, 0, 1, 2 ] },
+                "up": { "texture": "#holy_stone_tile", "uv": [ 0, 0, 2, 1 ] },
+                "down": { "texture": "#holy_stone_tile", "uv": [ 0, 0, 2, 1 ] }
+            }
+        },
+        {
+            "name": "Cube",
+            "from": [ 7, 2, 13 ], 
+            "to": [ 9, 4, 14 ], 
+            "faces": {
+                "east": { "texture": "#holy_stone_tile", "uv": [ 0, 0, 1, 2 ] },
+                "south": { "texture": "#holy_stone_tile", "uv": [ 0, 0, 2, 2 ] },
+                "west": { "texture": "#holy_stone_tile", "uv": [ 0, 0, 1, 2 ] },
+                "up": { "texture": "#holy_stone_tile", "uv": [ 0, 0, 2, 1 ] },
+                "down": { "texture": "#holy_stone_tile", "uv": [ 0, 0, 2, 1 ] }
+            }
+        },
+        {
+            "name": "Cube",
+            "from": [ 13, 2, 7 ], 
+            "to": [ 14, 4, 9 ], 
+            "faces": {
+                "north": { "texture": "#holy_stone_tile", "uv": [ 0, 0, 1, 2 ] },
+                "east": { "texture": "#holy_stone_tile", "uv": [ 0, 0, 2, 2 ] },
+                "south": { "texture": "#holy_stone_tile", "uv": [ 0, 0, 1, 2 ] },
+                "up": { "texture": "#holy_stone_tile", "uv": [ 0, 0, 1, 2 ] },
+                "down": { "texture": "#holy_stone_tile", "uv": [ 0, 0, 1, 2 ] }
+            }
+        },
+        {
+            "name": "Cube",
+            "from": [ 2, 2, 7 ], 
+            "to": [ 3, 4, 9 ], 
+            "faces": {
+                "north": { "texture": "#holy_stone_tile", "uv": [ 0, 0, 1, 2 ] },
+                "south": { "texture": "#holy_stone_tile", "uv": [ 0, 0, 1, 2 ] },
+                "west": { "texture": "#holy_stone_tile", "uv": [ 0, 0, 2, 2 ] },
+                "up": { "texture": "#holy_stone_tile", "uv": [ 0, 0, 1, 2 ] },
+                "down": { "texture": "#holy_stone_tile", "uv": [ 0, 0, 1, 2 ] }
+            }
+        }
+    ]
+}

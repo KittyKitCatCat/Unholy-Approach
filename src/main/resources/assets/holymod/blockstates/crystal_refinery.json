@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "normal": { "model": "holymod:crystal_refinery" },
+    "inventory": { "model": "holymod:crystal_refinery" }
+  }
+}
