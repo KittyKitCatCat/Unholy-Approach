@@ -8,9 +8,9 @@ import baubles.common.Baubles;
 import holymod.init.ModItems;
 import holymod.network.PacketHandler;
 import holymod.network.message.MessageCloudFX;
-import holymod.network.message.MessageMovement;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.entity.EntityPlayerSP;
+import net.minecraft.client.settings.GameSettings;
+import net.minecraft.client.settings.KeyBinding;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
@@ -90,60 +90,55 @@ public class ItemPurityGlideBraclet extends Item implements IBauble
 		}
 	}
 	public static Random random = new Random();
+
 	public void onWornTick(ItemStack itemstack, EntityLivingBase player)
 	{
-		if (player instanceof EntityPlayerSP && player == Minecraft.getMinecraft().player)
+		if (player instanceof EntityPlayer)
 		{
-			EntityPlayerSP playerSp = (EntityPlayerSP) player;
+			GameSettings settings = Minecraft.getMinecraft().gameSettings;
+			KeyBinding jump = settings.keyBindJump;
 			if (Cooldown > 0)
 			{
-				if (!playerSp.movementInput.jump)
+				if (!GameSettings.isKeyDown(jump))
 				{
 					Cooldown = 0;
 				}
 			}
-
-			if (playerSp.onGround)
+			if (player.onGround)
 			{
 				Cooldown = 1;
-				GlideCharge = 15;
+				GlideCharge = 25;
 			}
 			else
 			{
 				if (GlideCharge != 0)
 				{
-					if (playerSp.movementInput.jump)
+					if (GameSettings.isKeyDown(jump))
 					{
 						if (Cooldown == 0)
 						{
 							PacketHandler.INSTANCE.sendToAll(new MessageCloudFX(player.posX + random.nextDouble() * 0.5 * (random.nextDouble() > 0.5 ? -1 : 1), player.posY, player.posZ + random.nextDouble() * 0.5 * (random.nextDouble() > 0.5 ? -1 : 1), 0f, 0f, 0f));
-							player.velocityChanged = true;
-							if (player.motionY < 0.1)
+							if (player.motionY < 0.2)
 							{
-								player.addVelocity(0, 0.05, 0);
+								player.motionY += 0.1;
 							}
-							player.addVelocity(0, 0.1, 0);
+							player.motionY += 0.05;
 							GlideCharge -= 1;
-							player.fallDistance = 0;
-							PacketHandler.INSTANCE.sendToServer(new MessageMovement());
 						}
 					}
 				}
 			}
 			if (GlideCharge == 0)
 			{
-				if (playerSp.movementInput.jump)
+				if (GameSettings.isKeyDown(jump))
 				{
 					if (Cooldown == 0)
 					{
 						PacketHandler.INSTANCE.sendToAll(new MessageCloudFX(player.posX + random.nextDouble() * 0.5 * (random.nextDouble() > 0.5 ? -1 : 1), player.posY, player.posZ + random.nextDouble() * 0.5 * (random.nextDouble() > 0.5 ? -1 : 1), 0f, 0f, 0f));
-						player.velocityChanged = true;
 						if (player.motionY < -0.1)
 						{
 							player.motionY = -0.1;
 						}
-						player.fallDistance = 0;
-						PacketHandler.INSTANCE.sendToServer(new MessageMovement());
 					}
 				}
 			}

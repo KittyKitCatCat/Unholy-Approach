@@ -10,8 +10,5 @@ public class ItemBloodLight extends ItemBlock
   public ItemBloodLight(Block block)
   {
     super(block);
-    this.setMaxStackSize(1);
-    this.setMaxDamage(200);
-    this.canRepair = true;
   }
 }

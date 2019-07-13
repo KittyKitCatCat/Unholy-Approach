@@ -9,11 +9,9 @@ import net.minecraft.item.ItemAxe;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.common.Mod;
 
 import java.util.List;
 
-@Mod.EventBusSubscriber
 public class ItemBlessedAxe extends ItemAxe {
 
   public ItemBlessedAxe(Item.ToolMaterial materialIn, float damage, float attackSpeed) {

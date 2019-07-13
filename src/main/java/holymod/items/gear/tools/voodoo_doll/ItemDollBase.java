@@ -1,7 +1,8 @@
-package holymod.items.gear.tools;
+package holymod.items.gear.tools.voodoo_doll;
 
 import holymod.HolyMod;
 import holymod.init.ModItems;
+import holymod.items.gear.baubles.ItemRingDarkArts;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
@@ -37,7 +38,12 @@ public class ItemDollBase extends Item
 
       if (stack.getItem() == ModItems.voodoo_doll_control)
       {
-          target.setVelocity(random.nextDouble() * 0.5 * (random.nextDouble() > 0.5 ? -1 : 1), random.nextDouble() * 0.5 * (random.nextDouble() > 0.5 ? -1 : 1), random.nextDouble() * 0.5 * (random.nextDouble() > 0.5 ? -1 : 1));
+          double FORCE = 0.5;
+          if(!ItemRingDarkArts.isBaubleEquipped((EntityPlayer) attacker).isEmpty())
+          {
+              FORCE = 2;
+          }
+          target.setVelocity(random.nextDouble() * FORCE * (random.nextDouble() > 0.5 ? -1 : 1), random.nextDouble() * FORCE * (random.nextDouble() > 0.5 ? -1 : 1), random.nextDouble() * FORCE * (random.nextDouble() > 0.5 ? -1 : 1));
       }
       if (stack.getItem() == ModItems.voodoo_doll_divine_sight)
       {
@@ -52,13 +58,19 @@ public class ItemDollBase extends Item
       }
       if (stack.getItem() == ModItems.voodoo_doll_rending)
       {
+          float DAMAGE = 2f;
+          if(!ItemRingDarkArts.isBaubleEquipped((EntityPlayer) attacker).isEmpty())
+          {
+              DAMAGE = 4f;
+          }
+
           int hurtSave = target.hurtResistantTime;
           target.hurtResistantTime = 0;
-          if (!target.attackEntityFrom(DamageSource.causeIndirectDamage(attacker, (EntityLivingBase) target).setDamageBypassesArmor(), 2f))
+          if (!target.attackEntityFrom(DamageSource.causeIndirectDamage(attacker, (EntityLivingBase) target).setDamageBypassesArmor(), DAMAGE))
           {
               target.hurtResistantTime = hurtSave;
           }
-          target.attackEntityFrom(DamageSource.causeIndirectDamage(attacker, (EntityLivingBase) target).setDamageBypassesArmor(), 2f);
+          target.attackEntityFrom(DamageSource.causeIndirectDamage(attacker, (EntityLivingBase) target).setDamageBypassesArmor(), DAMAGE);
 
       }
       if (stack.getItem() == ModItems.voodoo_doll_misfortune)
@@ -72,81 +84,90 @@ public class ItemDollBase extends Item
   public static void RightClickItem(PlayerInteractEvent.RightClickItem event)
   {
       ItemStack stack = event.getItemStack();
-      if (!event.getEntityLiving().isSneaking())
-      {
-          if (stack.hasTagCompound())
-          {
-              if (event.getWorld() instanceof WorldServer)
-              {
-                  WorldServer worldServer = (WorldServer) event.getWorld();
-                  NBTTagCompound nbt = stack.getTagCompound();
-                  if (nbt != null)
-                  {
-                      UUID uuid = nbt.getUniqueId("entity");
-                      if (uuid != null)
-                      {
-                          if (!(worldServer.getEntityFromUuid(uuid) instanceof EntityPlayer))
-                          {
-                              if (worldServer.getEntityFromUuid(uuid) != null)
-                              {
-                                  Effect(worldServer.getEntityFromUuid(uuid), event.getEntityLiving());
-                              }
-                              else
-                              {
-                                  return;
-                              }
-                          }
-                          else
-                          {
-                              if (worldServer.getPlayerEntityByUUID(uuid) != null)
-                              {
-                                  Effect(worldServer.getPlayerEntityByUUID(uuid), event.getEntityLiving());
-                              }
-                              else
-                              {
-                                  return;
+      if (stack.getItem() instanceof ItemDollBase) {
+
+
+          if (!event.getEntityLiving().isSneaking()) {
+              if (stack.hasTagCompound()) {
+                  if (event.getWorld() instanceof WorldServer) {
+                      WorldServer worldServer = (WorldServer) event.getWorld();
+                      NBTTagCompound nbt = stack.getTagCompound();
+                      if (nbt != null) {
+                          UUID uuid = nbt.getUniqueId("entity");
+                          if (uuid != null) {
+                              if (!(worldServer.getEntityFromUuid(uuid) instanceof EntityPlayer)) {
+                                  if (worldServer.getEntityFromUuid(uuid) != null) {
+                                      Effect(worldServer.getEntityFromUuid(uuid), event.getEntityLiving());
+                                  } else {
+                                      return;
+                                  }
+                              } else {
+                                  if (worldServer.getPlayerEntityByUUID(uuid) != null) {
+                                      Effect(worldServer.getPlayerEntityByUUID(uuid), event.getEntityLiving());
+                                  } else {
+                                      return;
+                                  }
                               }
                           }
                       }
                   }
+                  stack.damageItem(1, event.getEntityLiving());
               }
-              stack.damageItem(1, event.getEntityLiving());
           }
       }
   }
   @SubscribeEvent
   public static void RightClickEntity(PlayerInteractEvent.EntityInteract event)
   {
-      if (event.getEntityLiving().isSneaking())
-      {
-          ItemStack stack = event.getItemStack();
-          Entity entity = event.getTarget();
-          if (!(stack.getItem() == ModItems.voodoo_doll_divine_sight))
-          {
-              if (entity instanceof EntityLivingBase && !(entity instanceof EntityPlayer))
-              {
-                  if (!stack.hasTagCompound())
-                  {
+      ItemStack stack = event.getItemStack();
+      if (stack.getItem() instanceof ItemDollBase) {
+          if (event.getEntityLiving().isSneaking()) {
+              Entity entity = event.getTarget();
+              if (!(stack.getItem() == ModItems.voodoo_doll_divine_sight)) {
+                  if (entity instanceof EntityLivingBase && !(entity instanceof EntityPlayer)) {
+                      if (!stack.hasTagCompound()) {
+                          stack.setTagCompound(new NBTTagCompound());
+                          NBTTagCompound nbt = stack.getTagCompound();
+                          assert nbt != null;
+                          nbt.setUniqueId("entity", entity.getUniqueID());
+                          entity.addTag("cursed");
+                      }
+                      if (stack.hasTagCompound()) {
+                          NBTTagCompound nbt = stack.getTagCompound();
+                          assert nbt != null;
+                          if (event.getWorld() instanceof WorldServer) {
+                              WorldServer worldServer = (WorldServer) event.getWorld();
+                              UUID uuid = nbt.getUniqueId("entity");
+                              if (uuid != null) {
+                                  if (!(worldServer.getEntityFromUuid(uuid) instanceof EntityPlayer)) {
+                                      if (worldServer.getEntityFromUuid(uuid) != null) {
+                                          Objects.requireNonNull(worldServer.getEntityFromUuid(uuid)).removeTag("cursed");
+                                      }
+                                  }
+                              }
+                          }
+                          entity.addTag("cursed");
+                          nbt.setUniqueId("entity", entity.getUniqueID());
+                      }
+                  }
+              }
+              if (entity instanceof EntityPlayer) {
+                  if (!stack.hasTagCompound()) {
                       stack.setTagCompound(new NBTTagCompound());
                       NBTTagCompound nbt = stack.getTagCompound();
                       assert nbt != null;
                       nbt.setUniqueId("entity", entity.getUniqueID());
                       entity.addTag("cursed");
                   }
-                  if (stack.hasTagCompound())
-                  {
+                  if (stack.hasTagCompound()) {
                       NBTTagCompound nbt = stack.getTagCompound();
                       assert nbt != null;
-                      if (event.getWorld() instanceof WorldServer)
-                      {
+                      if (event.getWorld() instanceof WorldServer) {
                           WorldServer worldServer = (WorldServer) event.getWorld();
                           UUID uuid = nbt.getUniqueId("entity");
-                          if (uuid != null)
-                          {
-                              if (!(worldServer.getEntityFromUuid(uuid) instanceof EntityPlayer))
-                              {
-                                  if (worldServer.getEntityFromUuid(uuid) != null)
-                                  {
+                          if (uuid != null) {
+                              if (!(worldServer.getEntityFromUuid(uuid) instanceof EntityPlayer)) {
+                                  if (worldServer.getEntityFromUuid(uuid) != null) {
                                       Objects.requireNonNull(worldServer.getEntityFromUuid(uuid)).removeTag("cursed");
                                   }
                               }
@@ -155,39 +176,6 @@ public class ItemDollBase extends Item
                       entity.addTag("cursed");
                       nbt.setUniqueId("entity", entity.getUniqueID());
                   }
-              }
-          }
-          if (entity instanceof EntityPlayer)
-          {
-              if (!stack.hasTagCompound())
-              {
-                  stack.setTagCompound(new NBTTagCompound());
-                  NBTTagCompound nbt = stack.getTagCompound();
-                  assert nbt != null;
-                  nbt.setUniqueId("entity", entity.getUniqueID());
-                  entity.addTag("cursed");
-              }
-              if (stack.hasTagCompound())
-              {
-                  NBTTagCompound nbt = stack.getTagCompound();
-                  assert nbt != null;
-                  if (event.getWorld() instanceof WorldServer)
-                  {
-                      WorldServer worldServer = (WorldServer) event.getWorld();
-                      UUID uuid = nbt.getUniqueId("entity");
-                      if (uuid != null)
-                      {
-                          if (!(worldServer.getEntityFromUuid(uuid) instanceof EntityPlayer))
-                          {
-                              if (worldServer.getEntityFromUuid(uuid) != null)
-                              {
-                                  Objects.requireNonNull(worldServer.getEntityFromUuid(uuid)).removeTag("cursed");
-                              }
-                          }
-                      }
-                  }
-                  entity.addTag("cursed");
-                  nbt.setUniqueId("entity", entity.getUniqueID());
               }
           }
       }

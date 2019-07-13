@@ -48,7 +48,7 @@ public class ItemBloodLamp extends Item
     }
     if(Damage != 200)
     {
-        ItemStack stackToPlace = new ItemStack(block);
+        ItemStack stackToPlace = new ItemStack(block.setLightLevel(8f));
         stack.damageItem(1, player);
         player.setHeldItem(hand, stackToPlace);
         double d0 = (double)pos.getX() + 0.5D;
