@@ -59,7 +59,7 @@ public class ItemPurityGlideBraclet extends Item implements IBauble
 	}
 	private static int GlideCharge = 20;
 	private static int Cooldown = 0;
-	public static ItemStack isBaubleEquipped(EntityPlayer player)
+	private static ItemStack isBaubleEquipped(EntityPlayer player)
 	{
 		IItemHandler baubles = BaublesApi.getBaublesHandler(player);
 		int slot = BaublesApi.isBaubleEquipped(player, ModItems.purity_glide_braclet);
@@ -77,7 +77,6 @@ public class ItemPurityGlideBraclet extends Item implements IBauble
 			if (event.getEntityLiving() instanceof EntityPlayer)
 			{
 				EntityPlayer player = Minecraft.getMinecraft().player;
-				IItemHandler baublesInv = BaublesApi.getBaublesHandler((EntityPlayer) event.getEntity());
 				if(!isBaubleEquipped(player).isEmpty())
 				{
 					event.setCanceled(true);
