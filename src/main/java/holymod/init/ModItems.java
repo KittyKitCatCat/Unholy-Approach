@@ -1,6 +1,10 @@
 package holymod.init;
 
 import holymod.HolyMod;
+import holymod.items.armor.spirit_of_the_forest.ItemArmorDruidBody;
+import holymod.items.armor.spirit_of_the_forest.ItemArmorDruidHead;
+import holymod.items.armor.spirit_of_the_forest.ItemArmorDruidLegs;
+import holymod.items.armor.spirit_of_the_forest.ItemArmorDruidShoes;
 import holymod.items.debug.ItemBloodLight;
 import holymod.items.gear.baubles.*;
 import holymod.items.gear.tools.*;
@@ -27,8 +31,6 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.registries.IForgeRegistry;
 
-import javax.annotation.Nonnull;
-
 @Mod.EventBusSubscriber
 public class ModItems {
 
@@ -40,7 +42,13 @@ public class ModItems {
         }
     };
 
-//Basic Gear
+    //elemental armor
+    public static Item druid_armor_head = new ItemArmorDruidHead().setUnlocalizedName("druid_armor_head").setRegistryName("druid_armor_head").setCreativeTab(customTab).setMaxStackSize(1);
+    public static Item druid_armor_legs = new ItemArmorDruidLegs().setUnlocalizedName("druid_armor_legs").setRegistryName("druid_armor_legs").setCreativeTab(customTab).setMaxStackSize(1);
+    public static Item druid_armor_chest = new ItemArmorDruidBody().setUnlocalizedName("druid_armor_chest").setRegistryName("druid_armor_chest").setCreativeTab(customTab).setMaxStackSize(1);
+    public static Item druid_armor_feet = new ItemArmorDruidShoes().setUnlocalizedName("druid_armor_feet").setRegistryName("druid_armor_feet").setCreativeTab(customTab).setMaxStackSize(1);
+
+    //Basic Gear
     public static Item endburnt_pickaxe = new ItemEndburntPickaxe(Item.ToolMaterial.DIAMOND).setUnlocalizedName("endburnt_pickaxe").setRegistryName("endburnt_pickaxe").setCreativeTab(customTab).setMaxStackSize(1);
     public static Item blood_axe = new ItemBloodAxe(HolyMod.BloodQuartzToolMaterial).setUnlocalizedName("blood_axe").setRegistryName("blood_axe").setCreativeTab(customTab).setMaxStackSize(1);
     public static Item blood_shovel = new ItemBloodShovel(HolyMod.BloodQuartzToolMaterial).setUnlocalizedName("blood_shovel").setRegistryName("blood_shovel").setCreativeTab(customTab).setMaxStackSize(1);
@@ -95,6 +103,10 @@ public class ModItems {
     public static void registerItems(RegistryEvent.Register<Item> evt)
     {
         IForgeRegistry<Item> r = evt.getRegistry();
+        r.register(druid_armor_head);
+        r.register(druid_armor_chest);
+        r.register(druid_armor_legs);
+        r.register(druid_armor_feet);
         r.register(endburnt_pickaxe);
         r.register(blood_axe);
         r.register(blood_shovel);
@@ -147,15 +159,13 @@ public class ModItems {
     }
     @SideOnly(Side.CLIENT)
     @SubscribeEvent
-    public void registerRendering(@Nonnull ModelRegistryEvent event)
+    public static void registerRendering(ModelRegistryEvent event)
     {
-
         MinecraftForge.EVENT_BUS.register(new holymod.particle.DarkEnergy.TextureStitcherBreathFX());
         MinecraftForge.EVENT_BUS.register(new holymod.particle.Cloud.TextureStitcherBreathFX());
         MinecraftForge.EVENT_BUS.register(new holymod.particle.HolyFire.TextureStitcherBreathFX());
         MinecraftForge.EVENT_BUS.register(new holymod.particle.Smoke.TextureStitcherBreathFX());
         MinecraftForge.EVENT_BUS.register(new holymod.particle.Cursed.TextureStitcherBreathFX());
-
         final int DEFAULT_ITEM_SUBTYPE = 0;
         ModelResourceLocation itemModelResourceLocation_The_Abbadon = new ModelResourceLocation("holymod:the_abbadon", "inventory");
         ModelLoader.setCustomModelResourceLocation(ModItems.the_abbadon, DEFAULT_ITEM_SUBTYPE, itemModelResourceLocation_The_Abbadon);

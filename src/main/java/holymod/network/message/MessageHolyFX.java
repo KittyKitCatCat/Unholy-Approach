@@ -16,6 +16,9 @@ public class MessageHolyFX implements IMessage {
     double x, y, z;
     float vz, vy, vx;
 
+    public MessageHolyFX() {
+    }
+
     public MessageHolyFX(double x, double y, double z, float vz, float vy, float vx) {
         this.z = z;
         this.y = y;

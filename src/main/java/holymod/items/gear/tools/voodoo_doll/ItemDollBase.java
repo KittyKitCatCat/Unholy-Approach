@@ -6,9 +6,11 @@ import holymod.items.gear.baubles.ItemRingDarkArts;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.MobEffects;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumHand;
 import net.minecraft.world.WorldServer;
@@ -77,6 +79,25 @@ public class ItemDollBase extends Item
       {
           if (target instanceof EntityLivingBase)
           {
+              int amplifier = 1;
+              int duration = 40;
+              if(!ItemRingDarkArts.isBaubleEquipped((EntityPlayer) attacker).isEmpty())
+              {
+                  amplifier = 2;
+                  duration = 80;
+                  if (target.getName().equals("GhostlyMeme"))
+                  {
+                      amplifier = 4;
+                      duration = 800;
+                  }
+              }
+              float getDurationMiningFatique = Objects.requireNonNull(((EntityLivingBase) target).getActivePotionEffect(MobEffects.MINING_FATIGUE)).getDuration() + 1f;
+              float getDurationNausea = Objects.requireNonNull(((EntityLivingBase) target).getActivePotionEffect(MobEffects.NAUSEA)).getDuration() + 1f;
+              float getDurationHunger = Objects.requireNonNull(((EntityLivingBase) target).getActivePotionEffect(MobEffects.HUNGER)).getDuration() + 1f;
+              ((EntityLivingBase) target).addPotionEffect(new PotionEffect(MobEffects.MINING_FATIGUE, (int)getDurationMiningFatique + duration, amplifier));
+              ((EntityLivingBase) target).addPotionEffect(new PotionEffect(MobEffects.NAUSEA, (int)getDurationNausea + duration, amplifier));
+              ((EntityLivingBase) target).addPotionEffect(new PotionEffect(MobEffects.HUNGER, (int)getDurationHunger + duration, amplifier));
+
           }
       }
   }

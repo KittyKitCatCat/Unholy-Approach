@@ -41,7 +41,8 @@ public class WorldTick
 
             for (EntityItem item : items) {
                 ItemStack stack = item.getItem();
-                if (stack.getItem() instanceof ItemShardCursed) {
+                if (stack.getItem() instanceof ItemShardCursed)
+                {
                     if (item.isWet()) {
                         int Count = item.getItem().getCount();
                         item.world.spawnEntity(new EntityItem(item.world, item.posX, item.posY, item.posZ, new ItemStack(ModItems.shard_purified)));
@@ -53,9 +54,10 @@ public class WorldTick
                         }
                     }
                 }
-                if (stack.getItem() instanceof ItemCrystal) {
-                    if (!stack.hasTagCompound())
-                    {
+                if (stack.getItem() instanceof ItemCrystal)
+                {
+                        if (!stack.hasTagCompound())
+                        {
                         stack.setTagCompound(new NBTTagCompound());
                         NBTTagCompound nbt = stack.getTagCompound();
                         nbt.setInteger("timer", 0);
