@@ -20,6 +20,7 @@ public class ItemArmorDruidChest extends ItemArmor {
     }
 
     @Override
+    @SideOnly(Side.CLIENT)
     @Nullable
     public String getArmorTexture(ItemStack stack, Entity entity, EntityEquipmentSlot slot, String type) {
         return "holymod:textures/armor/druidarmor.png";
