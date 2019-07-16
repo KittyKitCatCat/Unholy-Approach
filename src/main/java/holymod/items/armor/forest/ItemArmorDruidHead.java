@@ -16,7 +16,7 @@ public class ItemArmorDruidHead extends ItemArmor {
     protected String name;
 
     public ItemArmorDruidHead() {
-        super(ArmorMaterial.DIAMOND, 1, EntityEquipmentSlot.HEAD);
+        super(ArmorMaterial.DIAMOND, 0, EntityEquipmentSlot.HEAD);
     }
 
     @Override

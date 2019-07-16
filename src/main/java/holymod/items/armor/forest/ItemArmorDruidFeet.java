@@ -17,7 +17,7 @@ public class ItemArmorDruidFeet extends ItemArmor {
 
     public ItemArmorDruidFeet()
     {
-        super(ArmorMaterial.DIAMOND, 1, EntityEquipmentSlot.FEET);
+        super(ArmorMaterial.DIAMOND, 0, EntityEquipmentSlot.FEET);
     }
 
     @Override

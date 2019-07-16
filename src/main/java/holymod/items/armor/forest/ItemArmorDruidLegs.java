@@ -17,7 +17,7 @@ public class ItemArmorDruidLegs extends ItemArmor {
 
     public ItemArmorDruidLegs()
     {
-        super(ArmorMaterial.DIAMOND, 1, EntityEquipmentSlot.LEGS);
+        super(ArmorMaterial.DIAMOND, 0, EntityEquipmentSlot.LEGS);
     }
 
     @Override

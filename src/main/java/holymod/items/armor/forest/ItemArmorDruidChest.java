@@ -16,7 +16,7 @@ public class ItemArmorDruidChest extends ItemArmor {
     protected String name;
 
     public ItemArmorDruidChest() {
-        super(ArmorMaterial.DIAMOND, 1, EntityEquipmentSlot.CHEST);
+        super(ArmorMaterial.DIAMOND, 0, EntityEquipmentSlot.CHEST);
     }
 
     @Override
