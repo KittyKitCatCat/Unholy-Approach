@@ -1,4 +1,4 @@
-package holymod.items.armor.spirit_of_the_forest;
+package holymod.items.armor;
 
 import net.minecraft.client.model.ModelBiped;
 import net.minecraft.client.model.ModelRenderer;

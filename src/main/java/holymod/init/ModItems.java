@@ -1,10 +1,10 @@
 package holymod.init;
 
 import holymod.HolyMod;
-import holymod.items.armor.spirit_of_the_forest.ItemArmorDruidBody;
-import holymod.items.armor.spirit_of_the_forest.ItemArmorDruidHead;
-import holymod.items.armor.spirit_of_the_forest.ItemArmorDruidLegs;
-import holymod.items.armor.spirit_of_the_forest.ItemArmorDruidShoes;
+import holymod.items.armor.forest.ItemArmorDruidChest;
+import holymod.items.armor.forest.ItemArmorDruidFeet;
+import holymod.items.armor.forest.ItemArmorDruidHead;
+import holymod.items.armor.forest.ItemArmorDruidLegs;
 import holymod.items.debug.ItemBloodLight;
 import holymod.items.gear.baubles.*;
 import holymod.items.gear.tools.*;
@@ -45,8 +45,8 @@ public class ModItems {
     //elemental armor
     public static Item druid_armor_head = new ItemArmorDruidHead().setUnlocalizedName("druid_armor_head").setRegistryName("druid_armor_head").setCreativeTab(customTab).setMaxStackSize(1);
     public static Item druid_armor_legs = new ItemArmorDruidLegs().setUnlocalizedName("druid_armor_legs").setRegistryName("druid_armor_legs").setCreativeTab(customTab).setMaxStackSize(1);
-    public static Item druid_armor_chest = new ItemArmorDruidBody().setUnlocalizedName("druid_armor_chest").setRegistryName("druid_armor_chest").setCreativeTab(customTab).setMaxStackSize(1);
-    public static Item druid_armor_feet = new ItemArmorDruidShoes().setUnlocalizedName("druid_armor_feet").setRegistryName("druid_armor_feet").setCreativeTab(customTab).setMaxStackSize(1);
+    public static Item druid_armor_chest = new ItemArmorDruidChest().setUnlocalizedName("druid_armor_chest").setRegistryName("druid_armor_chest").setCreativeTab(customTab).setMaxStackSize(1);
+    public static Item druid_armor_feet = new ItemArmorDruidFeet().setUnlocalizedName("druid_armor_feet").setRegistryName("druid_armor_feet").setCreativeTab(customTab).setMaxStackSize(1);
 
     //Basic Gear
     public static Item endburnt_pickaxe = new ItemEndburntPickaxe(Item.ToolMaterial.DIAMOND).setUnlocalizedName("endburnt_pickaxe").setRegistryName("endburnt_pickaxe").setCreativeTab(customTab).setMaxStackSize(1);

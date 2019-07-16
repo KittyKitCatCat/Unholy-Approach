@@ -1,4 +1,4 @@
-package holymod.items.armor.spirit_of_the_forest;
+package holymod.items.armor.forest;
 
 import holymod.HolyMod;
 import net.minecraft.entity.Entity;
@@ -11,13 +11,13 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nullable;
 
-public class ItemArmorDruidShoes extends ItemArmor {
+public class ItemArmorDruidFeet extends ItemArmor {
 
     protected String name;
 
-    public ItemArmorDruidShoes()
+    public ItemArmorDruidFeet()
     {
-        super(ArmorMaterial.DIAMOND, 1, EntityEquipmentSlot.HEAD);
+        super(ArmorMaterial.DIAMOND, 1, EntityEquipmentSlot.FEET);
     }
 
     @Override

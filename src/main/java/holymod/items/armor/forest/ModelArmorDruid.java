@@ -8,8 +8,9 @@
  *
  * File Created @ [? (GMT)]
  */
-package holymod.items.armor.spirit_of_the_forest;
+package holymod.items.armor.forest;
 
+import holymod.items.armor.ModelArmor;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;

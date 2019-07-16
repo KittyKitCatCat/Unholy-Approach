@@ -1,4 +1,4 @@
-package holymod.items.armor.spirit_of_the_forest;
+package holymod.items.armor.forest;
 
 import holymod.HolyMod;
 import net.minecraft.entity.Entity;
@@ -11,11 +11,11 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nullable;
 
-public class ItemArmorDruidBody extends ItemArmor {
+public class ItemArmorDruidHead extends ItemArmor {
 
     protected String name;
 
-    public ItemArmorDruidBody() {
+    public ItemArmorDruidHead() {
         super(ArmorMaterial.DIAMOND, 1, EntityEquipmentSlot.HEAD);
     }
 
@@ -29,7 +29,7 @@ public class ItemArmorDruidBody extends ItemArmor {
     @SideOnly(Side.CLIENT)
     @Nullable
     public net.minecraft.client.model.ModelBiped getArmorModel(EntityLivingBase entityLiving, ItemStack itemStack, EntityEquipmentSlot armorSlot, net.minecraft.client.model.ModelBiped _default) {
-        return new ModelArmorDruid(EntityEquipmentSlot.CHEST);
+        return new ModelArmorDruid(EntityEquipmentSlot.HEAD);
     }
 
     public void registerItemModel() {
