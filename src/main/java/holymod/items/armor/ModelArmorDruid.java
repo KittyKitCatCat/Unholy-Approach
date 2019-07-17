@@ -1,16 +1,6 @@
-/**
- * This class was created by <wiiv>. It's distributed as
- * part of the Botania Mod. Get the Source Code in github:
- * https://github.com/Vazkii/Botania
- *
- * Botania is Open Source and distributed under the
- * Botania License: http://botaniamod.net/license.php
- *
- * File Created @ [? (GMT)]
- */
-package holymod.items.armor.forest;
 
-import holymod.items.armor.ModelArmor;
+package holymod.items.armor;
+
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
@@ -174,7 +164,27 @@ public class ModelArmorDruid extends ModelArmor
     }
 
     @Override
-    public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
+    public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5)
+    {
+        head.showModel = slot == EntityEquipmentSlot.HEAD;
+        helmE.showModel = slot == EntityEquipmentSlot.HEAD;
+        helmN.showModel = slot == EntityEquipmentSlot.HEAD;
+        helmS.showModel = slot == EntityEquipmentSlot.HEAD;
+        helmW.showModel = slot == EntityEquipmentSlot.HEAD;
+        antlerL1.showModel = slot == EntityEquipmentSlot.HEAD;
+        antlerL2.showModel = slot == EntityEquipmentSlot.HEAD;
+        antlerL3.showModel = slot == EntityEquipmentSlot.HEAD;
+        antlerL4.showModel = slot == EntityEquipmentSlot.HEAD;
+        antlerL5.showModel = slot == EntityEquipmentSlot.HEAD;
+        antlerR1.showModel = slot == EntityEquipmentSlot.HEAD;
+        antlerR2.showModel = slot == EntityEquipmentSlot.HEAD;
+        antlerR3.showModel = slot == EntityEquipmentSlot.HEAD;
+        antlerR4.showModel = slot == EntityEquipmentSlot.HEAD;
+        antlerR5.showModel = slot == EntityEquipmentSlot.HEAD;
+        body.showModel = slot == EntityEquipmentSlot.CHEST;
+        cape.showModel = slot == EntityEquipmentSlot.CHEST;
+        bb_main.showModel = slot == EntityEquipmentSlot.LEGS;
+        armleft.showModel = slot == EntityEquipmentSlot.LEGS;
         bb_main.render(f5);
         head.render(f5);
         body.render(f5);

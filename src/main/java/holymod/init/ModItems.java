@@ -1,10 +1,10 @@
 package holymod.init;
 
 import holymod.HolyMod;
-import holymod.items.armor.forest.ItemArmorDruidChest;
-import holymod.items.armor.forest.ItemArmorDruidFeet;
-import holymod.items.armor.forest.ItemArmorDruidHead;
-import holymod.items.armor.forest.ItemArmorDruidLegs;
+import holymod.items.armor.ItemArmorDruidChest;
+import holymod.items.armor.ItemArmorDruidFeet;
+import holymod.items.armor.ItemArmorDruidHead;
+import holymod.items.armor.ItemArmorDruidLegs;
 import holymod.items.debug.ItemBloodLight;
 import holymod.items.gear.baubles.*;
 import holymod.items.gear.tools.*;
