@@ -184,7 +184,10 @@ public class ModelArmorDruid extends ModelArmor
         body.showModel = slot == EntityEquipmentSlot.CHEST;
         cape.showModel = slot == EntityEquipmentSlot.CHEST;
         bb_main.showModel = slot == EntityEquipmentSlot.LEGS;
-        armleft.showModel = slot == EntityEquipmentSlot.LEGS;
+        armleft.showModel = slot == EntityEquipmentSlot.CHEST;
+        armright.showModel = slot == EntityEquipmentSlot.CHEST;
+        legright.showModel = slot == EntityEquipmentSlot.LEGS;
+        legleft.showModel = slot == EntityEquipmentSlot.LEGS;
         bb_main.render(f5);
         head.render(f5);
         body.render(f5);
