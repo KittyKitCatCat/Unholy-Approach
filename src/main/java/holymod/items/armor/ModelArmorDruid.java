@@ -47,6 +47,8 @@ public class ModelArmorDruid extends ModelArmor
         head.setRotationPoint(0.0F, -4.0F, 0.0F);
         head.cubeList.add(new ModelBox(head, 0, 0, -4.0F, -4.0F, -4.0F, 8, 8, 8, 0.2F, false));
 
+        bipedHead.addChild(head);
+
         helmN = new ModelRenderer(this);
         helmN.setRotationPoint(0.0F, -2.0F, -4.2F);
         setRotationAngle(helmN, 0.2618F, 0.0F, 0.0F);
@@ -137,6 +139,8 @@ public class ModelArmorDruid extends ModelArmor
         body.cubeList.add(new ModelBox(body, 32, 0, -4.0F, -6.0F, -2.0F, 8, 12, 4, 0.3F, false));
         body.cubeList.add(new ModelBox(body, 56, 0, -4.0F, -6.0F, -2.0F, 8, 12, 4, 0.2F, false));
 
+        bipedBody.addChild(body);
+
         cape = new ModelRenderer(this);
         cape.setRotationPoint(0.0F, -6.0F, 2.8F);
         setRotationAngle(cape, 0.0873F, 0.0F, 0.0F);
@@ -148,10 +152,14 @@ public class ModelArmorDruid extends ModelArmor
         armleft.cubeList.add(new ModelBox(armleft, 16, 48, -8.0F, -24.0F, -2.0F, 4, 12, 4, 0.4F, false));
         armleft.cubeList.add(new ModelBox(armleft, 48, 48, -8.0F, -24.0F, -2.0F, 4, 12, 4, 0.7F, false));
 
+        bipedLeftArm.addChild(armleft);
+
         armright = new ModelRenderer(this);
         armright.setRotationPoint(0.0F, 24.0F, 0.0F);
         armright.cubeList.add(new ModelBox(armright, 32, 48, 4.0F, -24.0F, -2.0F, 4, 12, 4, 0.4F, false));
         armright.cubeList.add(new ModelBox(armright, 16, 64, 4.0F, -24.0F, -2.0F, 4, 12, 4, 0.7F, false));
+
+        bipedRightArm.addChild(armright);
 
         legleft = new ModelRenderer(this);
         legleft.setRotationPoint(0.0F, 24.0F, 0.0F);
@@ -159,8 +167,12 @@ public class ModelArmorDruid extends ModelArmor
         legleft.cubeList.add(new ModelBox(legleft, 0, 48, -4.0F, -12.0F, -2.0F, 4, 12, 4, 0.8F, false));
         legleft.cubeList.add(new ModelBox(legleft, 20, 32, -4.0F, -12.0F, -2.0F, 4, 12, 4, 0.4F, false));
 
+        bipedLeftLeg.addChild(legleft);
+
         legright = new ModelRenderer(this);
         legright.setRotationPoint(0.0F, 24.0F, 0.0F);
+
+        bipedRightLeg.addChild(legright);
     }
 
     @Override
@@ -188,13 +200,7 @@ public class ModelArmorDruid extends ModelArmor
         armright.showModel = slot == EntityEquipmentSlot.CHEST;
         legright.showModel = slot == EntityEquipmentSlot.LEGS;
         legleft.showModel = slot == EntityEquipmentSlot.LEGS;
-        bb_main.render(f5);
-        head.render(f5);
-        body.render(f5);
-        armleft.render(f5);
-        armright.render(f5);
-        legleft.render(f5);
-        legright.render(f5);
+        super.render(entity, f, f1, f2, f3, f4, f5);
     }
     public void setRotationAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
