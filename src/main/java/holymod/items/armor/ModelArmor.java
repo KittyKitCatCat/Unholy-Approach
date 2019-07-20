@@ -9,8 +9,12 @@ import net.minecraft.inventory.EntityEquipmentSlot;
 public class ModelArmor extends ModelBiped {
 	protected final EntityEquipmentSlot slot;
 
-	public ModelArmor(EntityEquipmentSlot slot) {
+	public ModelArmor(EntityEquipmentSlot slot, int height, int width)
+	{
+		super(0f, 0f, width, height);
 		this.slot = slot;
+		this.textureHeight =  height;
+		this.textureWidth = width;
 	}
 
 	// [VanillaCopy] ModelArmorStandArmor.setRotationAngles because armor stands are dumb

@@ -21,7 +21,7 @@ public class ItemBloodLamp extends Item
 {
   // you must use Block in the constructor, not BlockVariants, otherwise you won't be able to register the block properly.
   //   i.e. using GameRegistry.registerBlock(block, ItemBlockVariants.class, name)
-  public ItemBloodLamp()
+    public ItemBloodLamp()
   {
     this.setMaxStackSize(1);
     this.setMaxDamage(200);
