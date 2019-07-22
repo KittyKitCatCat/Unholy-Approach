@@ -1,4 +1,5 @@
-package holymod.items.armor;
+package holymod.items.armor.druid;
+
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;

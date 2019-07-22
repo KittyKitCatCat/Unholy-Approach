@@ -1,6 +1,7 @@
 
-package holymod.items.armor;
+package holymod.items.armor.druid;
 
+import holymod.items.armor.ModelArmor;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
@@ -166,22 +167,7 @@ public class ModelArmorDruid extends ModelArmor
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5)
     {
         head.showModel = slot == EntityEquipmentSlot.HEAD;
-        helmE.showModel = slot == EntityEquipmentSlot.HEAD;
-        helmN.showModel = slot == EntityEquipmentSlot.HEAD;
-        helmS.showModel = slot == EntityEquipmentSlot.HEAD;
-        helmW.showModel = slot == EntityEquipmentSlot.HEAD;
-        antlerL1.showModel = slot == EntityEquipmentSlot.HEAD;
-        antlerL2.showModel = slot == EntityEquipmentSlot.HEAD;
-        antlerL3.showModel = slot == EntityEquipmentSlot.HEAD;
-        antlerL4.showModel = slot == EntityEquipmentSlot.HEAD;
-        antlerL5.showModel = slot == EntityEquipmentSlot.HEAD;
-        antlerR1.showModel = slot == EntityEquipmentSlot.HEAD;
-        antlerR2.showModel = slot == EntityEquipmentSlot.HEAD;
-        antlerR3.showModel = slot == EntityEquipmentSlot.HEAD;
-        antlerR4.showModel = slot == EntityEquipmentSlot.HEAD;
-        antlerR5.showModel = slot == EntityEquipmentSlot.HEAD;
         body.showModel = slot == EntityEquipmentSlot.CHEST;
-        cape.showModel = slot == EntityEquipmentSlot.CHEST;
         armleft.showModel = slot == EntityEquipmentSlot.CHEST;
         armright.showModel = slot == EntityEquipmentSlot.CHEST;
         legright.showModel = slot == EntityEquipmentSlot.LEGS;

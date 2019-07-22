@@ -1,10 +1,14 @@
 package holymod.init;
 
 import holymod.HolyMod;
-import holymod.items.armor.ItemArmorDruidChest;
-import holymod.items.armor.ItemArmorDruidFeet;
-import holymod.items.armor.ItemArmorDruidHead;
-import holymod.items.armor.ItemArmorDruidLegs;
+import holymod.items.armor.druid.ItemArmorDruidChest;
+import holymod.items.armor.druid.ItemArmorDruidFeet;
+import holymod.items.armor.druid.ItemArmorDruidHead;
+import holymod.items.armor.druid.ItemArmorDruidLegs;
+import holymod.items.armor.hellfire.ItemArmorHellfireChest;
+import holymod.items.armor.hellfire.ItemArmorHellfireFeet;
+import holymod.items.armor.hellfire.ItemArmorHellfireHead;
+import holymod.items.armor.hellfire.ItemArmorHellfireLegs;
 import holymod.items.debug.ItemBloodLight;
 import holymod.items.gear.baubles.*;
 import holymod.items.gear.tools.*;
@@ -47,6 +51,11 @@ public class ModItems {
     public static Item druid_armor_legs = new ItemArmorDruidLegs().setUnlocalizedName("druid_armor_legs").setRegistryName("druid_armor_legs").setCreativeTab(customTab).setMaxStackSize(1);
     public static Item druid_armor_chest = new ItemArmorDruidChest().setUnlocalizedName("druid_armor_chest").setRegistryName("druid_armor_chest").setCreativeTab(customTab).setMaxStackSize(1);
     public static Item druid_armor_feet = new ItemArmorDruidFeet().setUnlocalizedName("druid_armor_feet").setRegistryName("druid_armor_feet").setCreativeTab(customTab).setMaxStackSize(1);
+
+    public static Item hellfire_armor_head = new ItemArmorHellfireHead().setUnlocalizedName("hellfire_armor_head").setRegistryName("hellfire_armor_head").setCreativeTab(customTab).setMaxStackSize(1);
+    public static Item hellfire_armor_legs = new ItemArmorHellfireLegs().setUnlocalizedName("hellfire_armor_legs").setRegistryName("hellfire_armor_legs").setCreativeTab(customTab).setMaxStackSize(1);
+    public static Item hellfire_armor_chest = new ItemArmorHellfireChest().setUnlocalizedName("hellfire_armor_chest").setRegistryName("hellfire_armor_chest").setCreativeTab(customTab).setMaxStackSize(1);
+    public static Item hellfire_armor_feet = new ItemArmorHellfireFeet().setUnlocalizedName("hellfire_armor_feet").setRegistryName("hellfire_armor_feet").setCreativeTab(customTab).setMaxStackSize(1);
 
     //Basic Gear
     public static Item endburnt_pickaxe = new ItemEndburntPickaxe(Item.ToolMaterial.DIAMOND).setUnlocalizedName("endburnt_pickaxe").setRegistryName("endburnt_pickaxe").setCreativeTab(customTab).setMaxStackSize(1);
@@ -107,6 +116,10 @@ public class ModItems {
         r.register(druid_armor_chest);
         r.register(druid_armor_legs);
         r.register(druid_armor_feet);
+        r.register(hellfire_armor_head);
+        r.register(hellfire_armor_chest);
+        r.register(hellfire_armor_legs);
+        r.register(hellfire_armor_feet);
         r.register(endburnt_pickaxe);
         r.register(blood_axe);
         r.register(blood_shovel);
